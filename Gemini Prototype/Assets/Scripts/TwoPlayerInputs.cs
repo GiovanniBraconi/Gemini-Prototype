@@ -12,7 +12,7 @@ public class TwoPlayerInputs : MonoBehaviour
     private GameObject Player2;
     private float speed =0.04f;
 
-    private void Movement()
+    private void Movements()
     {
         //Check if players are assigned
         if (Player1 && Player2)
@@ -32,6 +32,6 @@ public class TwoPlayerInputs : MonoBehaviour
     }
     void Update()
     {
-        Movement();
+        Movements();
     }
 }
