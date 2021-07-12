@@ -414,6 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50dd3112ac7f23242bad7d93b97c96cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 1482969949}
+  player2: {fileID: 1020410113913636491}
 --- !u!1 &1884526901
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50dd3112ac7f23242bad7d93b97c96cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!4 &1020410113913636533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6692588680060902587, guid: 39467ce2f2f91914388c489e58a1aeef,
