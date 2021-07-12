@@ -12,7 +12,7 @@ public class Bounds : MonoBehaviour
     [SerializeField] private GameObject player2;
 
 
-    
+
     private void ScreenBounds()
     {
         if (transform.position.x < -xBound)
@@ -22,33 +22,33 @@ public class Bounds : MonoBehaviour
 
 
         }
-        if  (transform.position.x > xBound)
+        if (transform.position.x > xBound)
         {
             transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
 
         }
-        if  (transform.position.y > yBound)
+        if (transform.position.y > yBound)
         {
             transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
 
         }
-        if  (transform.position.y < -yBound)
+        if (transform.position.y < -yBound)
         {
             transform.position = new Vector3(transform.position.x, -yBound, transform.position.z);
 
         }
     }
-    private void Bond()
+    private void Radiuses()
     {
 
-        
+
         Vector3 centerPosition1 = player2.transform.position; //center of *black circle*
         Vector3 centerPosition2 = player1.transform.position;
         float distance = Vector3.Distance(centerPosition2, centerPosition1); //distance from ~green object~ to *black circle*
 
         if (distance > maxRadius) //If the distance is less than the radius, it is already within the circle.
         {
-            Vector3 fromOriginToObject1 = centerPosition2- centerPosition1; //~GreenPosition~ - *BlackCenter*
+            Vector3 fromOriginToObject1 = centerPosition2 - centerPosition1; //~GreenPosition~ - *BlackCenter*
             Vector3 fromOriginToObject2 = centerPosition1 - centerPosition2;
             fromOriginToObject1 *= maxRadius / distance; //Multiply by radius //Divide by Distance
             fromOriginToObject2 *= maxRadius / distance;
@@ -65,12 +65,14 @@ public class Bounds : MonoBehaviour
             player2.transform.position = centerPosition2 + fromOriginToObject2;
         }
     }
+    
+    
 
         // Update is called once per frame
         void Update()
         {
             ScreenBounds();
-            Bond();
+            Radiuses();
         }
     
 }
