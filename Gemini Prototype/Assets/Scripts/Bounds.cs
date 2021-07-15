@@ -38,37 +38,39 @@ public class Bounds : MonoBehaviour
 
         }
     }
+
+
     private void Radiuses()
     {
 
 
-        Vector3 centerPosition1 = player2.transform.position; //center of *black circle*
+        Vector3 centerPosition1 = player2.transform.position; 
         Vector3 centerPosition2 = player1.transform.position;
-        float distance = Vector3.Distance(centerPosition2, centerPosition1); //distance from ~green object~ to *black circle*
+        float distance = Vector3.Distance(centerPosition2, centerPosition1); 
 
-        if (distance > maxRadius) //If the distance is less than the radius, it is already within the circle.
+        if (distance > maxRadius) 
         {
-            Vector3 fromOriginToObject1 = centerPosition2 - centerPosition1; //~GreenPosition~ - *BlackCenter*
+            Vector3 fromOriginToObject1 = centerPosition2 - centerPosition1; 
             Vector3 fromOriginToObject2 = centerPosition1 - centerPosition2;
-            fromOriginToObject1 *= maxRadius / distance; //Multiply by radius //Divide by Distance
+            fromOriginToObject1 *= maxRadius / distance; 
             fromOriginToObject2 *= maxRadius / distance;
-            player1.transform.position = centerPosition1 + fromOriginToObject1; //*BlackCenter* + all that Math
+            player1.transform.position = centerPosition1 + fromOriginToObject1; 
             player2.transform.position = centerPosition2 + fromOriginToObject2;
         }
         if (distance < minRadius)
         {
-            Vector3 fromOriginToObject1 = centerPosition2 - centerPosition1; //~GreenPosition~ - *BlackCenter*
+            Vector3 fromOriginToObject1 = centerPosition2 - centerPosition1; 
             Vector3 fromOriginToObject2 = centerPosition1 - centerPosition2;
-            fromOriginToObject1 *= minRadius / distance; //Multiply by radius //Divide by Distance
+            fromOriginToObject1 *= minRadius / distance; 
             fromOriginToObject2 *= minRadius / distance;
-            player1.transform.position = centerPosition1 + fromOriginToObject1; //*BlackCenter* + all that Math
+            player1.transform.position = centerPosition1 + fromOriginToObject1;
             player2.transform.position = centerPosition2 + fromOriginToObject2;
         }
     }
     
     
 
-        // Update is called once per frame
+        
         void Update()
         {
             ScreenBounds();

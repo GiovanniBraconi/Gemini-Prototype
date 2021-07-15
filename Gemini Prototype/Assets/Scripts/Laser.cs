@@ -8,7 +8,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform endPoint;
     
-    // Start is called before the first frame update
+   
     void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -56,7 +56,7 @@ public class Laser : MonoBehaviour
 
 
 
-    // Update is called once per frame
+   
     void Update()
     {
         

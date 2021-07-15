@@ -6,7 +6,7 @@ public class Rotation : MonoBehaviour
 {
     public Transform target;
     public float speed = 5f;
-    // Start is called before the first frame update
+   
    
     private void Alignment()
     {
@@ -16,7 +16,7 @@ public class Rotation : MonoBehaviour
         
 
     }
-    // Update is called once per frame
+  
     void Update()
     {
         Alignment();
